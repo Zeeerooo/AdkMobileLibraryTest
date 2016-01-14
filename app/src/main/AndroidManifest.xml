@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cl.example.adkmobilelibrarytest">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Para el monitor de Telephony -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Para el monitor de Location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <application
+        android:name="cl.niclabs.adkmobile.AdkintunMobileApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Para el monitor de Traffic -->
+        <service android:name="cl.niclabs.adkmobile.monitor.Traffic" />
+
+        <!-- Para el monitor de Connectivity -->
+        <service android:name="cl.niclabs.adkmobile.monitor.Connectivity" />
+
+        <!-- Para el monitor de Screen -->
+        <service android:name="cl.niclabs.adkmobile.monitor.Screen" />
+
+        <!-- Para el monitor de Telephony -->
+        <service android:name="cl.niclabs.adkmobile.monitor.Telephony" />
+
+        <!--  -->
+        <service android:name="cl.niclabs.adkmobile.monitor.Location" />
+
+
+        <meta-data android:name="PERSISTENT" android:value="false" />
+    </application>
+
+</manifest>

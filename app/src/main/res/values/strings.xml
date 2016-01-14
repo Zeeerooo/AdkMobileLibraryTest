@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AdkMobileLibraryTest</string>
+    <string name="title_wifi">Eventos WiFi</string>
+    <string name="title_mobile">Eventos Mobile</string>
+    <string name="title_app">Eventos Applicaciones</string>
+    <string name="title_conectivity">Cambios de conectividad</string>
+    <string name="title_screen">Cambios de Pantalla</string>
+    <string name="title_phone">Cambios de teléfono</string>
+    <string name="title_traffic">Trafico móvil</string>
+    <string name="title_phone_obs">Observación Antena</string>
+    <string name="title_phone_sim">Cambios de SIM</string>
+    <string name="title_phone_service">Cambios de Servicio</string>
+    <string name="title_phone_dataconn">Conexión de Datos</string>
+    <string name="title_phone_airplanemode">Datos Modo Avión</string>
+    <string name="title_location">Datos Localización</string>
+    <string name="title_location_change">Cambio locación</string>
+    <string name="title_location_state">Cambio estado</string>
+</resources>
