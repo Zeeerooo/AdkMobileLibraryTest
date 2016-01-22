@@ -15,4 +15,12 @@
     <string name="title_location">Datos Localización</string>
     <string name="title_location_change">Cambio locación</string>
     <string name="title_location_state">Cambio estado</string>
+
+    <!-- notificaciones-->
+    <string name="notification_section_title">Enviar Notificación</string>
+    <string name="notification_title">Título</string>
+    <string name="notification_message">Mensaje</string>
+    <string name="notification_id">Id</string>
+    <string name="notification_button">Lanzar Notificación</string>
+
 </resources>

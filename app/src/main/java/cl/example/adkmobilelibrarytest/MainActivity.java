@@ -1,7 +1,9 @@
 package cl.example.adkmobilelibrarytest;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import cl.niclabs.adkmobile.monitor.Connectivity;
@@ -21,7 +23,9 @@ import cl.niclabs.adkmobile.monitor.listeners.ScreenListener;
 import cl.niclabs.adkmobile.monitor.listeners.TelephonyListener;
 import cl.niclabs.adkmobile.monitor.listeners.TrafficListener;
 
-public class MainActivity extends AppCompatActivity implements TrafficListener, ConnectivityListener, ScreenListener, TelephonyListener, LocationListener{
+import static cl.example.utils.Notification.showNotification;
+
+public class MainActivity extends AppCompatActivity implements TrafficListener, ConnectivityListener, ScreenListener, TelephonyListener, LocationListener {
 
     private Monitor.Controller<TrafficListener> trafficController;
     private Monitor.Controller<ConnectivityListener> connController;
@@ -71,6 +75,25 @@ public class MainActivity extends AppCompatActivity implements TrafficListener, 
         /* Visual */
         setContentView(R.layout.activity_main);
     }
+
+
+    public void issueNotification(View view) {
+
+        EditText notificationTitle = (EditText) findViewById(R.id.tf_notification_title);
+        EditText notificationMessage = (EditText) findViewById(R.id.tf_notification_message);
+        EditText notificationId = (EditText) findViewById(R.id.tf_notification_id);
+
+        //example of showNotification
+        int mNotificationId = Integer.parseInt(notificationId.getText().toString());
+        int mIcon = R.mipmap.ic_launcher;
+        String mTitle = notificationTitle.getText().toString();
+        String mText = notificationMessage.getText().toString();
+        boolean mAutoCancel = true;
+        Class mClass = MainActivity.class;
+
+        showNotification(this, mNotificationId, mIcon, mTitle, mText, mAutoCancel, mClass);
+    }
+
 
     @Override
     protected void onDestroy() {
@@ -149,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements TrafficListener, 
     }
 
     /* Métodos adicionales */
-    public void setDataTextView(final int idTV, final String newText){
+    public void setDataTextView(final int idTV, final String newText) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -160,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements TrafficListener, 
         });
     }
 
-    public void appendDataTextView(final int idTV, final String newText){
+    public void appendDataTextView(final int idTV, final String newText) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
